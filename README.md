@@ -4,7 +4,7 @@
 
 # SYNOPSIS
 
-`setzer <command> [<args>]`  
+`setzer <command> [<args>]`
  `setzer <command> --help`
 
 # COMMANDS
@@ -100,7 +100,7 @@ There are several extra options but you generally will not modify them.
 
 # OPTIONS
 
-You can provide any `seth` option to commands that send transactions.  
+You can provide any `seth` option to commands that send transactions.
  For example `setzer void <feed> -F <account> --gas=100000 -P 1000000000`
 
 Report bugs to <https://github.com/makerdao/setzer/issues>.
