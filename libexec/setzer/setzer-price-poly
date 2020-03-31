@@ -4,11 +4,11 @@ export LC_NUMERIC=C
 
 mapfile -t sources < <(setzer sources poly)
 
-addprice () {
-  price=$(timeout 5 setzer price poly-"$1" 2> /dev/null || true)
+addprice() {
+  price=$(timeout 5 setzer price poly-"$1" 2>/dev/null || true)
   if [[ $price ]]; then
     if [[ $price =~ ^[+-]?([1-9][0-9]*([.][0-9]+)?|[0][.][0-9]*[1-9]+[0-9]*)$ ]]; then
-      prices+=( "$price" )
+      prices+=("$price")
     fi
   fi
 }
@@ -19,4 +19,4 @@ done
 
 [[ ${#prices[@]} -lt 2 ]] && exit 1
 
-tr " " "\\n" <<< "${prices[@]}" | datamash median 1
+tr " " "\\n" <<<"${prices[@]}" | datamash median 1
